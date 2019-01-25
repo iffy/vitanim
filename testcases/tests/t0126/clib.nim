@@ -10,6 +10,8 @@ var s1 = s0.cstring
 proc hello_echo*(message:cstring):cstring {.exportc.} =
   ## Echo a message back
   echo GC_getStatistics()
+  echo "message addr: ", toHex(cast[int](message.unsafeAddr))
+  echo "repr        : ", repr(message.unsafeAddr)
   when defined(case1):
     var s_message = $message
     result = &"{s_message} echo"

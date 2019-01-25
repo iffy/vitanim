@@ -23,7 +23,7 @@ int main() {
     cout << "Hello world\n";
     int i = 0;
     for (i = 0; i < 1000; i++) {
-        std::string msg = std::string("Hello");
+        std::string msg = "Hello " + std::string(i, '-');
         std::string ret = echo(msg);
         cout << "Got reply: " << ret << "\n";
     }
